@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,bold|Open+Sans:300");
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-text: #1e1e1e;
+  --color-page: #fafbfc;
+  --font-primary: "Lato", sans-serif;
+  --font-heading: "Open Sans", sans-serif;
+  --font-size: 16px;
+}
+
+body {
+  color: var(--color-text);
+  background-color: var(--color-page);
+  overflow-x: hidden;
+  font-family: var(--font-primary);
+  font-size: var(--font-size);
+  line-height: 1.2em;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 300;
+}
+
+.register-form {
+  width: 50%;
+  margin: 40px auto 0 auto;
+}
