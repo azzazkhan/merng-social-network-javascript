@@ -27,7 +27,7 @@ module.exports = {
       const { errors, valid } = validateLoginData(username, password);
 
       // Throw a `UserInputError` if any field is failed to validate
-      if (!valid) throw new UserInputError("Error encounted", { errors });
+      if (!valid) throw new UserInputError("Error encountered", { errors });
 
       // Check if user does exists of provided username
       const user = await User.findOne({ username });

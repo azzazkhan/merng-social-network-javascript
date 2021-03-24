@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Button, Form } from "semantic-ui-react";
+import { Link } from "react-router-dom";
+import { Button, Checkbox, Form, Message } from "semantic-ui-react";
 
 function Register() {
   const [values, setValues] = useState({
@@ -11,9 +12,11 @@ function Register() {
     confirm_password: "",
   });
 
+  // const [errors, seterrors] = useState([]);
+
   // const [loading, setLoading] = useState(false)
 
-  const updateFeildValue = e =>
+  const updateFieldValue = e =>
     setValues({ ...values, [e.target.name]: e.target.value });
 
   return (
@@ -21,13 +24,19 @@ function Register() {
       <div className="register-form">
         <h1>Sign up for a new account</h1>
         <Form>
+          <Message error>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor iste
+            libero labore, perferendis accusantium molestiae assumenda adipisci
+            officiis quis, unde cum eaque magni aperiam praesentium fugiat
+            nesciunt! Vero, nesciunt illum?
+          </Message>
           <Form.Group widths="equal">
             <Form.Input
               fluid
               name="firstname"
               label="First name"
               value={values.firstname}
-              onChange={updateFeildValue}
+              onChange={updateFieldValue}
               placeholder="Enter your name"
               required
             />
@@ -36,7 +45,7 @@ function Register() {
               name="lastname"
               label="Last name"
               value={values.lastname}
-              onChange={updateFeildValue}
+              onChange={updateFieldValue}
               placeholder="Enter yout surname"
             />
           </Form.Group>
@@ -45,7 +54,7 @@ function Register() {
             name="username"
             label="Username"
             value={values.useState}
-            onChange={updateFeildValue}
+            onChange={updateFieldValue}
             placeholder="Choose a username for yourself"
             required
           />
@@ -55,7 +64,7 @@ function Register() {
             name="email"
             label="Email"
             value={values.email}
-            onChange={updateFeildValue}
+            onChange={updateFieldValue}
             placeholder="Enter your email address"
             required
           />
@@ -65,7 +74,7 @@ function Register() {
             name="password"
             label="Password"
             value={values.password}
-            onChange={updateFeildValue}
+            onChange={updateFieldValue}
             placeholder="Enter a password for your account"
             required
           />
@@ -75,20 +84,28 @@ function Register() {
             name="confirm_password"
             label="Confirm Password"
             value={values.confirm_password}
-            onChange={updateFeildValue}
+            onChange={updateFieldValue}
             placeholder="Renter your password"
             required
           />
+          <Form.Field>
+            <Checkbox
+              label="I accept the terms and services of Hi Text"
+              value="true"
+              required
+            ></Checkbox>
+          </Form.Field>
           <Form.Group>
             <Button fluid type="submit" primary>
               Join the community
             </Button>
           </Form.Group>
           <Form.Group>
-            <Button fluid secondary>
+            <Button fluid secondary as={Link} to="/">
               Back to homepage
             </Button>
           </Form.Group>
+          <Form.Field></Form.Field>
         </Form>
       </div>
     </React.Fragment>
